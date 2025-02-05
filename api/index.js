@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: false }));
 //import mongoose
 const mongoose = require('mongoose');
 // import router
-const productRoutes = require('./routes/product.route.js');
+const productRoutes = require('../routes/product.route.js');
 
 app.use('/api/products', productRoutes);
 
