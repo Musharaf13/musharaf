@@ -1,20 +1,30 @@
-//import express package
+// Import express package
 const express = require('express');
 const app = express();
-// to pass JSON through express
+
+// To pass JSON through express
 app.use(express.json());
-// to use form data  when posting product
+
+// To use form data when posting product
 app.use(express.urlencoded({ extended: false }));
-//import mongoose
+
+// Import mongoose
 const mongoose = require('mongoose');
-// import router
+
+// Import router
 const productRoutes = require('./routes/product.route.js');
 
 app.use('/api/products', productRoutes);
 
+// Base route to display "Life is beautiful"
+app.get('/', (req, res) => {
+  res.send('Life is beautiful');
+});
+
 // Set up Mongoose Connection String
 const connectionString = 'mongodb+srv://mirsameer513:Khan123k%40@backenddb.thur6.mongodb.net/Node-Api?retryWrites=true&w=majority&appName=BackendDB';
-//Connect to Database
+
+// Connect to Database
 mongoose.connect(connectionString)
   .then(() => {
     console.log('Connected To Backend DB');
