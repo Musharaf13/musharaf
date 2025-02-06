@@ -26,30 +26,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-    animation: fadeIn 3s ease-in-out;
+    padding: 20px;
   }
 
   .section-content {
-    padding: 40px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    max-width: 600px;
+    width: 100%;
     text-align: center;
-    background: rgba(0, 0, 0, 0.75);
-    border-radius: 15px;
-    font-size: 2.5em;
-    animation: slideUp 2s ease-in-out;
-    max-width: 800px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  /* Typewriter Effect */
   .typewriter {
-    display: inline-block;
-    overflow: hidden;
-    border-right: .15em solid orange;
+    font-size: 1.8em;
+    line-height: 1.4;
     white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid orange;
     margin: 0 auto;
-    letter-spacing: .1em;
-    animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+    animation: typing 3s steps(30, end) infinite alternate, blink-caret 0.75s step-end infinite;
   }
 
   @keyframes typing {
@@ -58,7 +57,7 @@
   }
 
   @keyframes blink-caret {
-    0%, 100% { border-color: transparent; }
+    from, to { border-color: transparent; }
     50% { border-color: orange; }
   }
 
@@ -117,7 +116,7 @@
 
 <div id="section1" class="parallax-section">
   <div class="section-content">
-    <h1 class="typewriter">Hi, My name is Musharaf and I'm a Full Stack Mobile Developer</h1>
+    <h1 class="typewriter">Hi, I'm Musharaf, a Full Stack Mobile Developer</h1>
     <p>Crafting Modern Web & Mobile Solutions</p>
     <button class="cta-button">View My Work</button>
   </div>
