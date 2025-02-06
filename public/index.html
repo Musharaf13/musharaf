@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parallax Scrolling Example</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  .parallax-section {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+  }
+
+  .section-content {
+    padding: 50px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2em;
+  }
+
+  /* Parallax Backgrounds */
+  #section1 {
+    background-image: url('https://via.placeholder.com/1200x800');
+  }
+
+  #section2 {
+    background-image: url('https://via.placeholder.com/1200x800/ff7f7f/333333');
+  }
+
+  #section3 {
+    background-image: url('https://via.placeholder.com/1200x800/87ceeb/333333');
+  }
+</style>
+</head>
+<body>
+
+<div id="section1" class="parallax-section">
+  <div class="section-content">Welcome to Parallax Scrolling</div>
+</div>
+
+<div class="section-content" style="background: #333; color: white;">
+  This is a regular section without parallax.
+</div>
+
+<div id="section2" class="parallax-section">
+  <div class="section-content">Amazing Scrolling Effect!</div>
+</div>
+
+<div class="section-content" style="background: #444; color: white;">
+  Another regular section for contrast.
+</div>
+
+<div id="section3" class="parallax-section">
+  <div class="section-content">Smooth and Beautiful</div>
+</div>
+
+</body>
+</html>
