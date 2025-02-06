@@ -1,5 +1,6 @@
 // Import express package
 const express = require('express');
+const path = require('path');
 const app = express();
 
 // To pass JSON through express
@@ -14,11 +15,12 @@ const mongoose = require('mongoose');
 // Import router
 const productRoutes = require('./routes/product.route.js');
 
-app.use('/api/products', productRoutes);
 
+app.use('/api/products', productRoutes);
+app.use(express.static(path.join(__dirname, 'public')));
 // Base route to display "Life is beautiful"
 app.get('/', (req, res) => {
-  res.send('Life is beautiful');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Set up Mongoose Connection String
