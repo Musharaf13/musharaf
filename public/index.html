@@ -15,6 +15,54 @@
     background: #111;
     color: #fff;
   }
+  .dark-mode {
+    background: #111;
+    color: #fff;
+  }
+  
+  .light-mode {
+    background: #fff;
+    color: #111;
+  }
+
+  .toggle-container {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .toggle-switch {
+    width: 50px;
+    height: 25px;
+    background: #333;
+    border-radius: 25px;
+    position: relative;
+    transition: background 0.5s;
+  }
+
+  .toggle-circle {
+    width: 20px;
+    height: 20px;
+    background: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+    transition: left 0.5s, background 0.5s;
+  }
+
+  .light-mode .toggle-switch {
+    background: #ddd;
+  }
+
+  .light-mode .toggle-circle {
+    left: 25px;
+    background: orange;
+  }
 
   .parallax-section {
     position: relative;
@@ -112,7 +160,13 @@
   }
 </style>
 </head>
-<body>
+<body class="dark-mode">
+  
+<div class="toggle-container" onclick="toggleMode()">
+  <div class="toggle-switch">
+    <div class="toggle-circle"></div>
+  </div>
+</div>
 
 <div id="section1" class="parallax-section">
   <div class="section-content">
@@ -120,6 +174,7 @@
     <p>Crafting Modern Web & Mobile Solutions</p>
     <button class="cta-button">View My Work</button>
   </div>
+  <div class="scroll-indicator">↓ Scroll More ↓</div>
 </div>
 
 <div class="regular-section">
@@ -146,6 +201,27 @@
     <a href="https://www.linkedin.com/in/muhammad-musharaf/" target="_blank"><button class="cta-button">Contact Me</button></a>
   </div>
 </div>
+
+  <script>
+ function toggleMode() {
+    const body = document.body;
+    const isLightMode = body.classList.toggle("light-mode");
+
+    if (isLightMode) {
+      localStorage.setItem("theme", "light");
+    } else {
+      localStorage.setItem("theme", "dark");
+      body.classList.remove("light-mode");
+    }
+  }
+
+  // Apply saved theme on load
+  document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("theme") === "light") {
+      document.body.classList.add("light-mode");
+    }
+  });
+</script>
 
 </body>
 </html>
